@@ -1,4 +1,6 @@
 # inft1016_sp5_2023_practicals
 
-MD Fayed Bin salim
+MD Fayed Bin Salim
+
+
 
