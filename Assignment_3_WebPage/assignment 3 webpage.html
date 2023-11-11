@@ -7,6 +7,7 @@
     <header><h1>Image gallery</h1></header>
     <main>
         <img src="https://tisztaotthon.cafeblog.hu/files/2018/01/nanotech.jpg">
+        <p id="imageDescription">default image description</p>
         
         <button onclick="imageChanger('https://uwaterloo.ca/future-students/sites/ca.future-students/files/uploads/images/eng-nano-student.jpg', 'A university created a course solely based on nanotechnology by realizing its untapped potential.', 'https://uwaterloo.ca/future-students/programs/nanotechnology-engineering')">image 1</button>
         <button onclick="imageChanger('https://cdn.leverageedu.com/blog/wp-content/uploads/2020/04/17210350/Applications-of-Nanotechnology.png', 'Applications of nanotechnology in engineering.', 'https://leverageedu.com/blog/applications-of-nanotechnology/')">image 2</button>
@@ -16,7 +17,11 @@
     </main>
 
     <script>
-        
+        function imageChanger(imageSrc, imageDescription) {
+            document.querySelector('img').src = imageSrc;
+            document.getElementById('imageDescription').textContent = imageDescription;
+        }
     </script>
 </body>
+</html>
 
