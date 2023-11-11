@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-      <title>Assingment 3 webpage</title> 
-      <style>
+    <meta charset="utf-8">
+    <title>Assingment 3 webpage</title> 
+    <link rel="stylesheet" href="base.css">
+    <style>
         body {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             align-items: center;
             padding: 20px;
         }
@@ -18,10 +20,22 @@
             max-width: 400px;
             height: auto;
         }
-      </style>
+    </style>
 </head>
 <body>
     <header><h1>Image gallery</h1></header>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Our team</a></li>
+            <li><a href="#">Project</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <form>
+            <input type="text" name="user_name" placeholder="Enter your name!">
+            <button type="submit>"Apply!</button></button>
+        </form>
+    </nav>
     <main>
         <img src="https://tisztaotthon.cafeblog.hu/files/2018/01/nanotech.jpg">
         <p id="imageDescription">default image description</p>
@@ -30,10 +44,18 @@
         <button onclick="imageChanger('https://cdn.leverageedu.com/blog/wp-content/uploads/2020/04/17210350/Applications-of-Nanotechnology.png', 'Applications of nanotechnology in engineering.', 'https://leverageedu.com/blog/applications-of-nanotechnology/')">image 2</button>
         <button onclick="imageChanger('https://image.slideserve.com/631675/nanotechnology-in-mechanical-engineering19-l.jpg', 'How nanotechnology can solve different kinds of problem for mechanical engineering.', 'https://www.slideserve.com/brit/nanotechnology-in-mechanical-engineering')">image 3</button>
         <button onclick="imageChanger('https://www.azonano.com/images/Article_Images/ImageForArticle_4985(1).jpg', 'How nanotechnology can solve different types of challenges in computer science and computer software engineering.', 'https://www.azonano.com/article.aspx?ArticleID=4985')">image 4</button>
-        <button onclick="imageChanger('https://greenstories.co.in/wp-content/uploads/2020/12/1-4.jpg', 'Nanotechnology possesses alot of threats and dangers and this link will tell us exactly about the problem.', 'https://greenstories.co.in/nanotoxicology/')">image 4</button>
+        <button onclick="imageChanger('https://greenstories.co.in/wp-content/uploads/2020/12/1-4.jpg', 'Nanotechnology possesses alot of threats and dangers and this link will tell us exactly about the problem.', 'https://greenstories.co.in/nanotoxicology/')">image 5</button>
     </main>
+    <footer>
+        <p>©Copyright 2050 by nobody. All rights reversed.</p>
+    </footer>
 
     <script>
+        function toggleTheme() {
+
+        }
+
+        
         function imageChanger(imageSrc, imageDescription, externalLink) {
             document.querySelector('img').src = imageSrc;
             document.getElementById('imageDescription').innerHTML = imageDescription + ' - <a href="' + externalLink + '" target="_blank">you will find the details within this link</a>';
