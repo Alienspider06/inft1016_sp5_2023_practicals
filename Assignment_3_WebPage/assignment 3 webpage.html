@@ -79,6 +79,21 @@
             document.querySelector('img').src = imageSrc;
             document.getElementById('imageDescription').innerHTML = imageDescription + ' - <a href="' + externalLink + '" target="_blank">you will find the details within this link</a>';
         }
+
+        function getQueryStringValue(key) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(key);
+        }
+
+        function updateUserHeading() {
+            const username = getQueryStringValue('user_name');
+            if (username) {
+                const heading = document.QuerySelector('h1');
+                heading.textContent = 'Hello, $(username)';
+            }
+        }
+
+        window.onload = updateUserHeading
     </script>
 </body>
 </html>
