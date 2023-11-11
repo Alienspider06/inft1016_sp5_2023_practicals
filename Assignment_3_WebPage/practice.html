@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Gallery</title>
+</head>
+<body>
+    <header>
+        <h1>Image Gallery</h1>
+    </header>
+    <main>
+        <img src="default.jpg" alt="Default Image">
+        <p id="imageDescription">Default Image Description</p>
+        
+        <button onclick="changeImage('https://example.com/image1.jpg', 'Photographer Information 1')">Image 1</button>
+        <button onclick="changeImage('https://example.com/image2.jpg', 'Photographer Information 2')">Image 2</button>
+        <button onclick="changeImage('https://example.com/image3.jpg', 'Photographer Information 3')">Image 3</button>
+        <button onclick="changeImage('https://example.com/image4.jpg', 'Photographer Information 4')">Image 4</button>
+        <button onclick="changeImage('https://example.com/image5.jpg', 'Photographer Information 5')">Image 5</button>
+    </main>
+
+    <script>
+        function changeImage(imageSrc, imageDescription) {
+            document.querySelector('img').src = imageSrc;
+            document.getElementById('imageDescription').textContent = imageDescription;
+        }
+    </script>
+</body>
+</html>
