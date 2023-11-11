@@ -34,7 +34,10 @@
     </style>
 </head>
 <body>
-    <header><h1>Image gallery</h1></header>
+    <header>
+        <h1>Image gallery</h1>
+        <button onclick="toggleTheme()">Toggle Theme</button>
+    </header>
     <nav>
         <ul>
             <li><a href="#">Home</a></li>
@@ -44,7 +47,7 @@
         </ul>
         <form>
             <input type="text" name="user_name" placeholder="Enter your name!">
-            <button type="submit>"Apply!</button></button>
+            <button type="submit>"Apply!</button>
         </form>
     </nav>
     <main>
@@ -63,9 +66,14 @@
 
     <script>
         function toggleTheme() {
+            const body = document.body;
+            if (body.getAttribute('data-theme') == 'dark') {
+                body.removeAttribute('data-theme');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+            }
 
         }
-
 
         function imageChanger(imageSrc, imageDescription, externalLink) {
             document.querySelector('img').src = imageSrc;
