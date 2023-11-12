@@ -36,4 +36,6 @@ Every single image is associated with nanotechnology and it's application in var
 
 -toggleTheme(): This function lets the user to toggle between the white and dark mode.
 -imageChanger(): Updates the displayed image and its description whenever the user clicks the specific button.
--getQueryString(): This will retrievs a specific value from the URL query
+-getQueryString(): This will retrievs a specific value from the URL query string.
+-Functions which will basically take care of user input and preferences, for example: updateuserheading, loadthemepreferences, savedthemepreferences, and storeusernamefromquerystring.
+-Eevent listners for the load event to execute the functions when the window is loaded.
