@@ -1,18 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
+    /*The following code will define the document properties*/
     <meta charset="utf-8">
     <title>Assingment 3 webpage</title> 
     <link rel="stylesheet" href="base.css">
     <style>
         :root {
-            --primary-color-light:rgb(255, 7, 255);
-            --primary-color-dark: rgb(0, 0, 0);
-            --primary-color: var(--primary-color-light);
+            --primary-color: rgb(255,255,255);
+            --secondary-color: rgb(200,200,200);
+            --bg-color: rgb(240, 240, 240);
+            --font-color: rgb(50, 50, 50);
+            --heading-color: rgb(100, 100, 100);
         }
 
         [data-theme="dark"] {
-            --primary-color: var(--primary-color-dark);
+            --primary-color: rgb(0, 0, 0);
+            --secondary-color: rgb(50,50,50);
+            --bg-color: rgb(20,20,20);
+            --font-color: rgb(180,180,180);
+            --heading-color: rgb(150,150,150)
+           ;
         }
 
         body {
@@ -51,6 +59,8 @@
         </form>
     </nav>
     <main>
+        
+
         <img src="https://tisztaotthon.cafeblog.hu/files/2018/01/nanotech.jpg">
         <p id="imageDescription">default image description</p>
         
@@ -59,6 +69,9 @@
         <button onclick="imageChanger('https://image.slideserve.com/631675/nanotechnology-in-mechanical-engineering19-l.jpg', 'How nanotechnology can solve different kinds of problem for mechanical engineering.', 'https://www.slideserve.com/brit/nanotechnology-in-mechanical-engineering')">image 3</button>
         <button onclick="imageChanger('https://www.azonano.com/images/Article_Images/ImageForArticle_4985(1).jpg', 'How nanotechnology can solve different types of challenges in computer science and computer software engineering.', 'https://www.azonano.com/article.aspx?ArticleID=4985')">image 4</button>
         <button onclick="imageChanger('https://greenstories.co.in/wp-content/uploads/2020/12/1-4.jpg', 'Nanotechnology possesses alot of threats and dangers and this link will tell us exactly about the problem.', 'https://greenstories.co.in/nanotoxicology/')">image 5</button>
+        <p id="date-time">Now the date and time is:</p>
+    
+    
     </main>
     <footer>
         <p>©Copyright 2050 by nobody. All rights reversed.</p>
@@ -88,12 +101,64 @@
         function updateUserHeading() {
             const username = getQueryStringValue('user_name');
             if (username) {
+                localStorage.setItem('userName', username);
                 const heading = document.querySelector('h1');
-                heading.textContent = 'Hello, $(username)';
+                heading.textContent = `Hello, ${username}`;
+            } else {
+                const storedUsername = localStorage.getItem('userName');
+                if (storedUsername) {
+                    const heading = document.querySelector('h1');
+                    heading.textContent = `Hello, ${username}`;
+                }
             }
         }
 
+
+        function loadThemePrefernce() {
+            const savedTheme = localStorage.getItem('themePreferences');
+            if (savedTheme) {
+                document.body.setAttribute('data-theme', savedTheme);
+            }
+        }
+
+       
+
+        function saveThemePreference() {
+            local.storage.setItem('themPreference', savedTheme);
+        }
+
+        function storeUserNameFromQueryString() {
+            const username = getQueryStringValue('user_name');
+            if (user_name) {
+                localStorage.setItem('userName', username);
+                
+            } else {
+                const storeUsername = localStorage.getItem('userName');
+                if (storedUsername) {
+
+                }
+            }
+        }
+
+      
+        function showDateTime() {
+            const now = new Date();
+            const dateTimeElement = document.getElementById('date-time');
+            
+            const dateTimeString = now.toLocaleString();
+            dateTimeElement.textContent = "Now the time and date is: " + dateTimeString;
+        }
+        window.addEventListener('load', showDateTime);
+
         window.addEventListener('load', updateUserHeading);
+
+        window.addEventListener('load', loadThemePreference);
+
+        window.addEventListener('load', storeUserNameFromQueryString);
+
+        
+
+                
 
     </script>
 </body>
