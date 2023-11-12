@@ -11,28 +11,29 @@
         /*CSS style definition begins here*/
         /*styling variables*/
         :root {
-            --primary-color: rgb(255,255,255);
+            --primary-color: rgb(27, 25, 25);
             --secondary-color: rgb(200,200,200);
             --bg-color: rgb(240, 240, 240);
             --font-color: rgb(50, 50, 50);
             --heading-color: rgb(100, 100, 100);
+
         }
 
         [data-theme="dark"] {
-            --primary-color: rgb(0, 0, 0);/* 255,0,0 represents red */
-            --secondary-color: rgb(50,50,50);/* 0,255,0 */
+
+            --primary-color: rgb(255,255,255);
             --bg-color: rgb(20,20,20);/* 0,0,255 */
-            --font-color: rgb(180,180,180);
-            --heading-color: rgb(150,150,150)
-           ;
+           
         }
 
         body {
-            display: flex;
+            
+            display: flex;/*it is used to establish a flex container*/
             flex-direction: column;
             align-items: center;
             padding: 20px;
             color: var(--primary-color);
+            background-color: var(--bg-color);
         }
 
         button, img, p {
@@ -51,13 +52,13 @@
         <button onclick="toggleTheme()">Toggle Theme</button>
     </header>
     <nav>
-        <ul>
-            <li><a href="#">Home</a></li>
+        <ul>  <!--Using the li command to create buttons that will link with alot of stuffs-->
+            <li><a href="#">Home</a></li> 
             <li><a href="#">Our team</a></li>
             <li><a href="#">Project</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
-        <form>
+        <form><!--creating a function where the user inputs his name and the website interacts with that indiviual-->
             <input type="text" name="user_name" placeholder="Enter your name!">
             <button type="submit>"Apply!</button>
         </form>
@@ -68,11 +69,11 @@
         <img src="https://tisztaotthon.cafeblog.hu/files/2018/01/nanotech.jpg">
         <p id="imageDescription">default image description</p>
         
-        <button onclick="imageChanger('https://uwaterloo.ca/future-students/sites/ca.future-students/files/uploads/images/eng-nano-student.jpg', 'A university created a course solely based on nanotechnology by realizing its untapped potential.', 'https://uwaterloo.ca/future-students/programs/nanotechnology-engineering')">image 1</button>
-        <button onclick="imageChanger('https://cdn.leverageedu.com/blog/wp-content/uploads/2020/04/17210350/Applications-of-Nanotechnology.png', 'Applications of nanotechnology in engineering.', 'https://leverageedu.com/blog/applications-of-nanotechnology/')">image 2</button>
-        <button onclick="imageChanger('https://image.slideserve.com/631675/nanotechnology-in-mechanical-engineering19-l.jpg', 'How nanotechnology can solve different kinds of problem for mechanical engineering.', 'https://www.slideserve.com/brit/nanotechnology-in-mechanical-engineering')">image 3</button>
-        <button onclick="imageChanger('https://www.azonano.com/images/Article_Images/ImageForArticle_4985(1).jpg', 'How nanotechnology can solve different types of challenges in computer science and computer software engineering.', 'https://www.azonano.com/article.aspx?ArticleID=4985')">image 4</button>
-        <button onclick="imageChanger('https://greenstories.co.in/wp-content/uploads/2020/12/1-4.jpg', 'Nanotechnology possesses alot of threats and dangers and this link will tell us exactly about the problem.', 'https://greenstories.co.in/nanotoxicology/')">image 5</button>
+        <button onclick="imageChanger('https://uwaterloo.ca/future-students/sites/ca.future-students/files/uploads/images/eng-nano-student.jpg', 'Nanotechnology means electronic devides and technologies that are the size of an atom. These devices function at the molecular level. A university created a course solely based on nanotechnology by realizing its untapped potential. The image is taken by the officials of university of waterloo. To view a licensed version of this image visit the following link:', 'https://uwaterloo.ca/future-students/programs/nanotechnology-engineering')">Nanotechnology</button>
+        <button onclick="imageChanger('https://cdn.leverageedu.com/blog/wp-content/uploads/2020/04/17210350/Applications-of-Nanotechnology.png', 'Nanotechnology can be used in many different ways. A lot of problems can be easily solved with the help of nanotechnology .Applications of nanotechnology in engineering. The image was provided by team leverage edu. To view the licensed ', 'https://leverageedu.com/blog/applications-of-nanotechnology/')">Application</button>
+        <button onclick="imageChanger('https://image.slideserve.com/631675/nanotechnology-in-mechanical-engineering19-l.jpg', 'Nanotechnology can solve different kinds of problem for mechanical engineering.', 'https://www.slideserve.com/brit/nanotechnology-in-mechanical-engineering')">Application of nanotech in engineering</button>
+        <button onclick="imageChanger('https://www.azonano.com/images/Article_Images/ImageForArticle_4985(1).jpg', 'How nanotechnology can solve different types of challenges in computer science and computer software engineering.', 'https://www.azonano.com/article.aspx?ArticleID=4985')">How nanotech helps computer engineering</button>
+        <button onclick="imageChanger('https://greenstories.co.in/wp-content/uploads/2020/12/1-4.jpg', 'Nanotechnology possesses alot of threats and dangers and this link will tell us exactly about the problem.', 'https://greenstories.co.in/nanotoxicology/')">Threats of nanotech</button>
         <p id="date-time">Now the date and time is:</p>
     
     
@@ -158,11 +159,7 @@
 
         window.addEventListener('load', loadThemePreference);
 
-        window.addEventListener('load', storeUserNameFromQueryString);
-
-        
-
-                
+        window.addEventListener('load', storeUserNameFromQueryString);               
 
     </script>
 </body>
