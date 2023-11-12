@@ -71,9 +71,9 @@
         <!--creating buttons which will change the image once clicked by the user-->
         <button onclick="imageChanger('https://uwaterloo.ca/future-students/sites/ca.future-students/files/uploads/images/eng-nano-student.jpg', 'Nanotechnology means electronic devides and technologies that are the size of an atom. These devices function at the molecular level. A university created a course solely based on nanotechnology by realizing its untapped potential. The image is taken by the officials of university of waterloo. To view a licensed version of this image visit the following link:', 'https://uwaterloo.ca/future-students/programs/nanotechnology-engineering')">Nanotechnology</button>
         <button onclick="imageChanger('https://cdn.leverageedu.com/blog/wp-content/uploads/2020/04/17210350/Applications-of-Nanotechnology.png', 'Nanotechnology can be used in many different ways. A lot of problems can be easily solved with the help of nanotechnology .Applications of nanotechnology in engineering. The image was provided by team leverage edu. To view the licensed ', 'https://leverageedu.com/blog/applications-of-nanotechnology/')">Application</button>
-        <button onclick="imageChanger('https://image.slideserve.com/631675/nanotechnology-in-mechanical-engineering19-l.jpg', 'Nanotechnology can solve different kinds of problem for mechanical engineering.', 'https://www.slideserve.com/brit/nanotechnology-in-mechanical-engineering')">Application of nanotech in engineering</button>
-        <button onclick="imageChanger('https://www.azonano.com/images/Article_Images/ImageForArticle_4985(1).jpg', 'How nanotechnology can solve different types of challenges in computer science and computer software engineering.', 'https://www.azonano.com/article.aspx?ArticleID=4985')">How nanotech helps computer engineering</button>
-        <button onclick="imageChanger('https://greenstories.co.in/wp-content/uploads/2020/12/1-4.jpg', 'Nanotechnology possesses alot of threats and dangers and this link will tell us exactly about the problem.', 'https://greenstories.co.in/nanotoxicology/')">Threats of nanotech</button>
+        <button onclick="imageChanger('https://image.slideserve.com/631675/nanotechnology-in-mechanical-engineering19-l.jpg', 'Nanotechnology can solve different kinds of problem for mechanical engineering.', 'https://www.slideserve.com/brit/nanotechnology-in-mechanical-engineering')">Engineering</button>
+        <button onclick="imageChanger('https://www.azonano.com/images/Article_Images/ImageForArticle_4985(1).jpg', 'How nanotechnology can solve different types of challenges in computer science and computer software engineering.', 'https://www.azonano.com/article.aspx?ArticleID=4985')">Computer science</button>
+        <button onclick="imageChanger('https://greenstories.co.in/wp-content/uploads/2020/12/1-4.jpg', 'Nanotechnology possesses alot of threats and dangers and this link will tell us exactly about the problem.', 'https://greenstories.co.in/nanotoxicology/')">Threats</button>
         <p id="date-time">Now the date and time is:</p>
     
     
@@ -167,7 +167,8 @@
         window.addEventListener('load', loadThemePreference);
 
         window.addEventListener('load', storeUserNameFromQueryString);               
-
+        
+        window.onload=updateUserHeading;
     </script>
 </body>
 </html>
