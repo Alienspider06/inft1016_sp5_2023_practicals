@@ -68,7 +68,7 @@
 
         <img src="https://tisztaotthon.cafeblog.hu/files/2018/01/nanotech.jpg">
         <p id="imageDescription">default image description</p>
-        
+        <!--creating buttons which will change the image once clicked by the user-->
         <button onclick="imageChanger('https://uwaterloo.ca/future-students/sites/ca.future-students/files/uploads/images/eng-nano-student.jpg', 'Nanotechnology means electronic devides and technologies that are the size of an atom. These devices function at the molecular level. A university created a course solely based on nanotechnology by realizing its untapped potential. The image is taken by the officials of university of waterloo. To view a licensed version of this image visit the following link:', 'https://uwaterloo.ca/future-students/programs/nanotechnology-engineering')">Nanotechnology</button>
         <button onclick="imageChanger('https://cdn.leverageedu.com/blog/wp-content/uploads/2020/04/17210350/Applications-of-Nanotechnology.png', 'Nanotechnology can be used in many different ways. A lot of problems can be easily solved with the help of nanotechnology .Applications of nanotechnology in engineering. The image was provided by team leverage edu. To view the licensed ', 'https://leverageedu.com/blog/applications-of-nanotechnology/')">Application</button>
         <button onclick="imageChanger('https://image.slideserve.com/631675/nanotechnology-in-mechanical-engineering19-l.jpg', 'Nanotechnology can solve different kinds of problem for mechanical engineering.', 'https://www.slideserve.com/brit/nanotechnology-in-mechanical-engineering')">Application of nanotech in engineering</button>
@@ -84,41 +84,46 @@
 
     <script>
         function toggleTheme() {
-            const body = document.body;
-            if (body.getAttribute('data-theme') == 'dark') {
-                body.removeAttribute('data-theme');
+            // function to toggle the theme
+            const body = document.body; //getting the body element
+            if (body.getAttribute('data-theme') == 'dark') { //check if the theme is dark currently
+                body.removeAttribute('data-theme'); //if it is dark then remove the data theme attribute
             } else {
-                body.setAttribute('data-theme', 'dark');
+                body.setAttribute('data-theme', 'dark');//if not then set the data theme attribute to dark
             }
 
         }
 
+        //function to change the displayed image and it's description
         function imageChanger(imageSrc, imageDescription, externalLink) {
-            document.querySelector('img').src = imageSrc;
+            document.querySelector('img').src = imageSrc; //setting the image source to the provided imagesrc
             document.getElementById('imageDescription').innerHTML = imageDescription + ' - <a href="' + externalLink + '" target="_blank">you will find the details within this link</a>';
         }
 
-        function getQueryStringValue(key) {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(key);
+        //function to get a specific value from the URL query string
+        function getQueryStringValue(key) { 
+            const urlParams = new URLSearchParams(window.location.search);//creating a new URLsearchparams object using the current URL
+            return urlParams.get(key);//returning the value corresponding to the provided key from the query string
         }
 
+        //funtion to update the user heading
         function updateUserHeading() {
-            const username = getQueryStringValue('user_name');
-            if (username) {
-                localStorage.setItem('userName', username);
-                const heading = document.querySelector('h1');
-                heading.textContent = `Hello, ${username}`;
+            const username = getQueryStringValue('user_name');//getting the username value from the query string using the getquerystring function
+            if (username) { //checking if the username value exists
+                localStorage.setItem('userName', username); //if it exists, storing the username value in local storage
+                const heading = document.querySelector('h1');  //getting the h1 element
+                heading.textContent = `Hello, ${username}`; //setting the h1 element's text content to greet the user
             } else {
-                const storedUsername = localStorage.getItem('userName');
-                if (storedUsername) {
-                    const heading = document.querySelector('h1');
-                    heading.textContent = `Hello, ${username}`;
+                const storedUsername = localStorage.getItem('userName'); //retrieving the stored username from local storage
+                if (storedUsername) {  //checking if the username value exists
+                    const heading = document.querySelector('h1'); //getting the h1 element
+                    heading.textContent = `Hello, ${username}`; //setting the h1 element's text content to greet the user based on the stored username
                 }
             }
         }
 
-
+        // additional functions and listeners to handle theme preferences and user input are present in the provided code
+        //listeners: this method is used in javascript to listen for specific events on the window object. for example: when an event, such as the load event occurs on the window, it triggers the associated funtion to execute
         function loadThemePrefernce() {
             const savedTheme = localStorage.getItem('themePreferences');
             if (savedTheme) {
@@ -153,6 +158,8 @@
             const dateTimeString = now.toLocaleString();
             dateTimeElement.textContent = "Now the time and date is: " + dateTimeString;
         }
+
+        //calling all the functions
         window.addEventListener('load', showDateTime);
 
         window.addEventListener('load', updateUserHeading);
